@@ -15,13 +15,13 @@ contract Task1 with Deployable {
     init() {
       self.counter = 0;
     }
-
+    // update the counter with value passed + init val of counter
     receive(msg: Add) {
-    self.counter <- self.counter + msg.number;
+    self.counter = self.counter + msg.number;
     }
-    
+    // update the counter to be init val of counter - value passed
     receive(msg: Subtract) {
-    self.counter <- self.counter - msg.number;
+    self.counter = self.counter - msg.number;
     }
 
     get fun counter(): Int {
